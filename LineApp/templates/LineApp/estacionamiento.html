@@ -1,0 +1,20 @@
+{% extends 'LineApp/p_inicio.html' %}
+{% load static %}
+
+{% block titulo %}
+    <title>Agregar estacionamiento</title>
+{% endblock titulo %}
+
+{% block content %}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="{% url 'estacionamiento' %}" method="POST" class="text-white">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Agregar</button>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+{% endblock content %}

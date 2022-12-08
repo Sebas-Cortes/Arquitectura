@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from .models import Estacionamiento
 
 class UserForm(UserCreationForm):
     password1 = forms.CharField(label='Contraseña',widget=forms.PasswordInput(attrs={'class': 'form-control bg-dark text-white','placeholder':'Contraseña','id':'reg-pass'}))
@@ -51,3 +52,24 @@ class LoginForm(AuthenticationForm):
                                 widget=forms.TextInput(attrs={'class': 'form-control bg-dark text-white','placeholder':'Nombre de usuario'}))
     password = forms.CharField(label='Contraseña',
                                 widget=forms.PasswordInput(attrs={'class': 'form-control bg-dark text-white','placeholder':'Contraseña'}))
+
+class EstacionamientoForm(forms.ModelForm):
+
+    class Meta:
+        model = Estacionamiento
+        fields = ['direccion', 'numero']
+        labels = {
+            'direccion' : 'Dirección',
+            'numero' : 'Número'
+        }
+        widgets = {
+            'direccion' : forms.TextInput(attrs={
+                'class' : 'form-control bg-dark text-white',
+                'placeholder' : 'Direccion',
+                'id' : 'direccion'
+            }),
+            'numero' : forms.NumberInput(attrs={
+                'class' : 'form-control bg-dark text-white',
+                'id' : 'numero'
+            })
+        }
