@@ -1,0 +1,53 @@
+
+@keyframes girar{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@font-face {
+    font-family: 'valorant font';
+    src: url('../font/ValorantFont.ttf');
+}
+@font-face{
+    font-family: 'ff mark';
+    src: url('../font/FontFont_FF.Mark.Pro.otf');
+}
+body, html {
+    height: 100%;
+}
+.bg{
+    /* The image used */
+    background-image: url("../img/FondoChambel.png");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.bg4{
+    /* The image used */
+    background-image: url("../img/fondosinnada2.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position:  center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: 0.3s;
+}
+#titulo{
+    font-family: "valorant font";
+}
+a,h6,h5,h3,h1,h2,label,button,p{
+    font-family: "ff mark";
+}
